@@ -6,6 +6,10 @@ const POINTS = [
   [168, 88, "#e2725b"], [196, 52, "#e0a83b"], [228, 66, "#3ddc84"], [258, 34, "#e2725b"], [282, 44, "#e0a83b"],
 ];
 
+// PDF public/ folder mein rakho. Chaho to data.js ke profile mein
+// resume: "/Anvesh_Jain_Resume.pdf" bhi daal sakte ho, warna ye default chalega.
+const DEFAULT_RESUME = "/Anvesh_Jain_Resume.pdf";
+
 export default function Hero({ profile }) {
   const [drawn, setDrawn] = useState(false);
   useEffect(() => {
@@ -35,6 +39,28 @@ export default function Hero({ profile }) {
               className="font-mono-d text-sm px-5 py-3 rounded border border-line inline-block text-center flex-1 sm:flex-none transition-all hover:-translate-y-0.5 hover:border-fg"
             >
               Get in touch
+            </a>
+            <a
+              href={profile.resume || DEFAULT_RESUME}
+              download="Anvesh_Jain_Resume.pdf"
+              className="font-mono-d text-sm px-5 py-3 rounded border border-accent text-accent inline-flex items-center justify-center gap-2 flex-1 sm:flex-none transition-all hover:-translate-y-0.5 hover:bg-accent hover:text-page"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              Download resume
             </a>
           </div>
         </div>
