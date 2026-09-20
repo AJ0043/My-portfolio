@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #0a0806;
+  --color-panel: #14100c;
+  --color-track: #120e0b;
+  --color-line: #33261b;
+  --color-fg: #f5ede6;
+  --color-muted: #b09a88;
+  --color-accent: #ff8a3d;
+
+  --font-serif-d: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono-d: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0806;
+  color: #f5ede6;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-image: radial-gradient(#33261b 1px, transparent 1px);
+  background-size: 26px 26px;
+  overflow-x: hidden;
+}
+
+::selection { background: #ff8a3d; color: #0a0806; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #ff8a3d;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
